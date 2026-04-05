@@ -110,6 +110,29 @@ export const properties = [
     agent: { name: 'Aaron Burke', email: 'Aaron@aaronburkesells.com', phone: '954-632-0344' },
     financingNote: '$500-525K purchase + $175K reno = $675-700K. Fits $700K pre-approval with HomeStyle loan. After-reno appraisal $800K+ supports LTV.',
     strategy: 'Offer $510K. Seller motivated (99 days, 3 cuts, as-is). Anchor to $354/sqft unrenovated comp. Request 15-day inspection — as-is still allows walk-away in FL.',
+
+    hasSitePlan: true,
+
+    equityAnalysis: {
+      purchasePrice: 510000,
+      renoCost: 175000,
+      totalInvestment: 685000,
+      afterRenoValue: 827500,
+      instantEquity: 142500,
+      equityPercent: 21,
+      note: 'Based on $855K comp one block away. Even conservative $800K appraisal yields $115K equity.',
+    },
+
+    monthlyBreakdown: {
+      mortgage: 4200,
+      taxes: 449,
+      insurance: 542,
+      total: 5191,
+      note: 'HomeStyle 30yr @ 6.8% on $685K (purchase + reno). Tax est based on current $5,386/yr. Insurance mid-range est.',
+    },
+
+    recommendation: 'Best long-term value play. The 3/2 layout with garage gives you the widest resale buyer pool. Zip 33306 has dramatically lower flood risk than 33334. The renovation is real work, but the $855K comp one block away proves the upside. Offer on this simultaneously with 40th St — the 20th Ave seller is far more motivated (99 days, three price cuts, listed as-is).',
+
     addedDate: '2026-04-05',
     lastUpdated: '2026-04-05',
   },
@@ -214,6 +237,40 @@ export const properties = [
     agent: { name: 'Felipe Aragon', email: null, phone: null },
     financingNote: 'Conventional loan at $555-575K — well within $700K. Add pool later via HELOC.',
     strategy: 'Offer $565K. Reference $400K purchase price (public record) and 2-bed limitation. Flipper has ~$160-180K in reno — at $565K they still profit $25-45K.',
+
+    hasSitePlan: true,
+
+    equityAnalysis: {
+      purchasePrice: 565000,
+      renoCost: 0,
+      totalInvestment: 565000,
+      afterRenoValue: 580000,
+      instantEquity: 15000,
+      equityPercent: 3,
+      note: 'Already renovated. Fair market value est $560-600K based on comps. At $565K you\'re buying near fair value — limited upside until you add a pool.',
+    },
+
+    monthlyBreakdown: {
+      mortgage: 3400,
+      taxes: 375,
+      insurance: 542,
+      total: 4317,
+      note: 'Conventional 30yr @ 6.8% on $565K. Tax est pending reassessment after sale. Insurance mid-range.',
+    },
+
+    flipProfitAnalysis: {
+      purchasePrice: 400000,
+      renoEstimate: 180000,
+      totalFlipperCost: 580000,
+      askingPrice: 639000,
+      flipperProfit: 59000,
+      atYourOffer: 565000,
+      flipperProfitAtOffer: -15000,
+      note: 'At $565K the flipper roughly breaks even or takes a small loss. They may counter. At $575K they net ~$0-15K — enough to make them walk away from the project. Use the 2-bed limitation and $400K public record as leverage.',
+    },
+
+    recommendation: 'The move-in-ready option. That spa bathroom and kitchen are genuinely high quality — not a lipstick flip. But at $535/sqft you\'re paying top-of-market for a 2-bed with a carport. The value is in the massive backyard (3,500+ sqft) and the paid-off solar/new roof — your carrying costs will be lower. Don\'t pay over $575K. Offer simultaneously with 20th Ave.',
+
     addedDate: '2026-04-05',
     lastUpdated: '2026-04-05',
   },

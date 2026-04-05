@@ -9,6 +9,13 @@ import { properties } from '../data/properties';
 import { useApp } from '../context/AppContext';
 import { formatPrice, verdictColor, verdictColorLight, verdictLabel } from '../utils/format';
 import PhotoGallery from '../components/PhotoGallery';
+import SitePlan3497 from '../components/SitePlan3497';
+import SitePlan1741 from '../components/SitePlan1741';
+
+const sitePlanComponents = {
+  '3497-ne-20th-ave': SitePlan3497,
+  '1741-ne-40th-st': SitePlan1741,
+};
 
 function Section({ title, icon: Icon, children, darkMode }) {
   return (
@@ -118,6 +125,80 @@ export default function PropertyDetail() {
         </div>
         <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{p.strategy}</p>
       </div>
+
+      {/* Equity Analysis */}
+      {p.equityAnalysis && (
+        <Section title="Equity Analysis" icon={TrendingDown} darkMode={darkMode}>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+            <StatBox label="Purchase Price" value={formatPrice(p.equityAnalysis.purchasePrice)} darkMode={darkMode} />
+            {p.equityAnalysis.renoCost > 0 && <StatBox label="Renovation" value={formatPrice(p.equityAnalysis.renoCost)} darkMode={darkMode} />}
+            <StatBox label="Total Investment" value={formatPrice(p.equityAnalysis.totalInvestment)} darkMode={darkMode} />
+            <StatBox label="After-Reno Value" value={formatPrice(p.equityAnalysis.afterRenoValue)} darkMode={darkMode} />
+          </div>
+          <div className={`rounded-lg p-4 border ${p.equityAnalysis.equityPercent >= 15 ? (darkMode ? 'bg-emerald-500/5 border-win-500/30' : 'bg-emerald-50 border-emerald-200') : (darkMode ? 'bg-navy-900 border-navy-700' : 'bg-gray-50 border-gray-200')}`}>
+            <div className="flex items-baseline gap-3 mb-1">
+              <span className={`text-2xl font-bold ${p.equityAnalysis.equityPercent >= 15 ? 'text-win-400' : darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
+                {formatPrice(p.equityAnalysis.instantEquity)}
+              </span>
+              <span className={`text-sm font-semibold ${p.equityAnalysis.equityPercent >= 15 ? 'text-win-400' : sub}`}>
+                ({p.equityAnalysis.equityPercent}% instant equity)
+              </span>
+            </div>
+            <p className={`text-xs ${muted}`}>{p.equityAnalysis.note}</p>
+          </div>
+        </Section>
+      )}
+
+      {/* Monthly Breakdown */}
+      {p.monthlyBreakdown && (
+        <Section title="Monthly Cost Estimate" icon={DollarSign} darkMode={darkMode}>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+            <StatBox label="Mortgage" value={formatPrice(p.monthlyBreakdown.mortgage)} sub="/month" darkMode={darkMode} />
+            <StatBox label="Property Tax" value={formatPrice(p.monthlyBreakdown.taxes)} sub="/month" darkMode={darkMode} />
+            <StatBox label="Insurance" value={formatPrice(p.monthlyBreakdown.insurance)} sub="/month" darkMode={darkMode} />
+            <div className={`rounded-lg p-3 border-2 ${darkMode ? 'bg-teal-500/5 border-teal-500/30' : 'bg-teal-50 border-teal-200'}`}>
+              <div className={`text-xs font-medium ${muted}`}>Total Monthly</div>
+              <div className="text-lg font-bold text-teal-400 mt-0.5">{formatPrice(p.monthlyBreakdown.total)}</div>
+              <div className={`text-xs ${muted}`}>/month</div>
+            </div>
+          </div>
+          <p className={`text-xs ${muted}`}>{p.monthlyBreakdown.note}</p>
+        </Section>
+      )}
+
+      {/* Flip Profit Analysis (for flips only) */}
+      {p.flipProfitAnalysis && (
+        <Section title="Flip Profit Breakdown" icon={AlertTriangle} darkMode={darkMode}>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3">
+            <StatBox label="Flipper Paid" value={formatPrice(p.flipProfitAnalysis.purchasePrice)} darkMode={darkMode} />
+            <StatBox label="Est. Reno Spend" value={formatPrice(p.flipProfitAnalysis.renoEstimate)} darkMode={darkMode} />
+            <StatBox label="Flipper's All-In" value={formatPrice(p.flipProfitAnalysis.totalFlipperCost)} darkMode={darkMode} />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+            <div className={`rounded-lg p-3 ${darkMode ? 'bg-coral-500/5 border border-coral-500/20' : 'bg-red-50 border border-red-200'}`}>
+              <div className={`text-xs font-medium ${muted}`}>At Asking ({formatPrice(p.flipProfitAnalysis.askingPrice)})</div>
+              <div className="text-lg font-bold text-coral-400">{formatPrice(p.flipProfitAnalysis.flipperProfit)} profit</div>
+            </div>
+            <div className={`rounded-lg p-3 ${darkMode ? 'bg-teal-500/5 border border-teal-500/20' : 'bg-teal-50 border border-teal-200'}`}>
+              <div className={`text-xs font-medium ${muted}`}>At Your Offer ({formatPrice(p.flipProfitAnalysis.atYourOffer)})</div>
+              <div className={`text-lg font-bold ${p.flipProfitAnalysis.flipperProfitAtOffer <= 0 ? 'text-coral-400' : 'text-teal-400'}`}>
+                {formatPrice(Math.abs(p.flipProfitAnalysis.flipperProfitAtOffer))} {p.flipProfitAnalysis.flipperProfitAtOffer <= 0 ? 'loss' : 'profit'}
+              </div>
+            </div>
+          </div>
+          <p className={`text-xs ${muted}`}>{p.flipProfitAnalysis.note}</p>
+        </Section>
+      )}
+
+      {/* Recommendation */}
+      {p.recommendation && (
+        <div className={`rounded-xl border-2 p-5 ${darkMode ? 'bg-emerald-500/5 border-win-500/30' : 'bg-emerald-50 border-emerald-200'}`}>
+          <h2 className="font-serif text-xl text-win-400 mb-2 flex items-center gap-2">
+            <CheckCircle2 size={20} /> Bottom Line
+          </h2>
+          <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{p.recommendation}</p>
+        </div>
+      )}
 
       {/* 4. Key Stats */}
       <Section title="Key Stats" icon={Building} darkMode={darkMode}>
@@ -262,12 +343,26 @@ export default function PropertyDetail() {
         </Section>
       )}
 
-      {/* 9. Outdoor Space */}
+      {/* 9. Outdoor Space + Site Plan */}
       <Section title="Outdoor Space" icon={TreePine} darkMode={darkMode}>
         <p className={`text-sm mb-4 ${sub}`}>{p.backyardNotes}</p>
+
+        {/* Interactive site plan */}
+        {p.hasSitePlan && sitePlanComponents[p.id] && (() => {
+          const SitePlan = sitePlanComponents[p.id];
+          return (
+            <div className="mb-6">
+              <h3 className={`text-sm font-semibold mb-3 flex items-center gap-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <MapPin size={14} className="text-teal-400" /> Interactive Site Plan
+              </h3>
+              <SitePlan />
+            </div>
+          );
+        })()}
+
         {p.poolOptions.length > 0 && (
           <>
-            <h3 className={`text-sm font-semibold mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Pool Options</h3>
+            <h3 className={`text-sm font-semibold mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Pool Options Summary</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {p.poolOptions.map((opt, i) => (
                 <div key={i} className={`rounded-lg p-4 border ${darkMode ? 'bg-navy-900 border-navy-700' : 'bg-gray-50 border-gray-200'}`}>
