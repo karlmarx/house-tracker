@@ -43,112 +43,115 @@ export default function SitePlan1741() {
         ))}
       </div>
 
-      <svg width="100%" viewBox="0 0 680 640" className="rounded-lg">
-        <defs>
-          <marker id="arrow1741" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke={muted} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </marker>
-        </defs>
+      <div className="overflow-x-auto -mx-2 px-2">
+        <svg viewBox="0 0 680 640" className="rounded-lg min-w-[520px] w-full">
+          <defs>
+            <marker id="arrow1741" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke={muted} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </marker>
+          </defs>
 
-        {/* Lot boundary */}
-        <rect x="80" y="30" width="520" height="580" rx="2" fill="none" stroke={border} strokeWidth="1.5" strokeDasharray="6 3" />
-        <rect x="82" y="32" width="516" height="576" rx="1" fill="#2d6a4f" opacity=".08" />
+          {/* Lot boundary */}
+          <rect x="80" y="30" width="520" height="580" rx="2" fill="none" stroke={border} strokeWidth="2" strokeDasharray="6 3" />
+          <rect x="82" y="32" width="516" height="576" rx="1" fill="#2d6a4f" opacity=".08" />
 
-        {/* Street */}
-        <text x="340" y="628" textAnchor="middle" fill={muted} fontSize="11" fontWeight="500">NE 40th Street</text>
-        <text x="630" y="55" fill={muted} fontSize="13" fontWeight="600">N ↑</text>
+          {/* Street */}
+          <text x="340" y="628" textAnchor="middle" fill={muted} fontSize="16" fontWeight="600">NE 40th Street</text>
+          <text x="630" y="55" fill={muted} fontSize="18" fontWeight="700">N ↑</text>
 
-        {/* Width */}
-        <line x1="80" y1="18" x2="600" y2="18" stroke={muted} strokeWidth=".5" markerStart="url(#arrow1741)" markerEnd="url(#arrow1741)" />
-        <text x="340" y="14" textAnchor="middle" fill={muted} fontSize="10">~75'</text>
+          {/* Width */}
+          <line x1="80" y1="18" x2="600" y2="18" stroke={muted} strokeWidth=".75" markerStart="url(#arrow1741)" markerEnd="url(#arrow1741)" />
+          <text x="340" y="14" textAnchor="middle" fill={muted} fontSize="14" fontWeight="500">~75'</text>
 
-        {/* Driveway + carport */}
-        <path d="M140 610 L140 430 L220 430 L220 610" fill="none" stroke={muted} strokeWidth="1" opacity=".3" />
-        <rect x="140" y="430" width="80" height="80" rx="2" fill={bg} stroke={border} strokeWidth=".75" strokeDasharray="4 2" />
-        <text x="180" y="475" textAnchor="middle" fill={muted} fontSize="10">carport</text>
-        <text x="180" y="570" textAnchor="middle" fill={muted} fontSize="10">driveway</text>
+          {/* Driveway + carport */}
+          <path d="M140 610 L140 430 L220 430 L220 610" fill="none" stroke={muted} strokeWidth="1.5" opacity=".3" />
+          <rect x="140" y="430" width="80" height="80" rx="2" fill={bg} stroke={border} strokeWidth="1" strokeDasharray="4 2" />
+          <text x="180" y="478" textAnchor="middle" fill={muted} fontSize="14" fontWeight="500">carport</text>
+          <text x="180" y="568" textAnchor="middle" fill={muted} fontSize="13">driveway</text>
 
-        {/* House */}
-        <rect x="180" y="340" width="320" height="170" rx="2" fill={bg} stroke={border} strokeWidth="1.5" />
+          {/* House */}
+          <rect x="180" y="340" width="320" height="170" rx="2" fill={bg} stroke={border} strokeWidth="2" />
 
-        {/* BR wing */}
-        <rect x="400" y="320" width="100" height="80" rx="2" fill={bg} stroke={border} strokeWidth="1" />
-        <text x="450" y="365" textAnchor="middle" fill={muted} fontSize="10">BR wing</text>
+          {/* BR wing */}
+          <rect x="400" y="320" width="100" height="80" rx="2" fill={bg} stroke={border} strokeWidth="1.5" />
+          <text x="450" y="368" textAnchor="middle" fill={muted} fontSize="14" fontWeight="500">BR wing</text>
 
-        {/* House labels */}
-        <text x="320" y="410" textAnchor="middle" fill={heading} fontSize="14" fontWeight="600">house</text>
-        <text x="320" y="428" textAnchor="middle" fill={text} fontSize="10">1,194 sqft · 2/2</text>
+          {/* House labels */}
+          <text x="320" y="412" textAnchor="middle" fill={heading} fontSize="20" fontWeight="700">house</text>
+          <text x="320" y="434" textAnchor="middle" fill={text} fontSize="14">1,194 sqft · 2/2</text>
 
-        {/* Solar panels */}
-        <g opacity=".2">
-          <rect x="220" y="355" width="40" height="20" rx="1" fill="#1a1a2e" stroke="#1a1a2e" strokeWidth=".5" />
-          <rect x="265" y="355" width="40" height="20" rx="1" fill="#1a1a2e" stroke="#1a1a2e" strokeWidth=".5" />
-          <rect x="310" y="355" width="40" height="20" rx="1" fill="#1a1a2e" stroke="#1a1a2e" strokeWidth=".5" />
-        </g>
-        <text x="290" y="390" textAnchor="middle" fill={muted} fontSize="10">solar panels</text>
-
-        {/* Existing patio */}
-        <rect x="260" y="260" width="120" height="80" rx="2" fill={muted} opacity=".1" stroke={muted} strokeWidth=".75" />
-        <text x="320" y="305" textAnchor="middle" fill={muted} fontSize="10">existing patio</text>
-
-        {/* Slider */}
-        <line x1="280" y1="340" x2="360" y2="340" stroke="#00b4d8" strokeWidth="3" opacity=".6" />
-        <text x="320" y="335" textAnchor="middle" fill="#00b4d8" fontSize="10">slider to yard</text>
-
-        {/* BR windows */}
-        <line x1="420" y1="320" x2="470" y2="320" stroke="#00b4d8" strokeWidth="2" opacity=".4" />
-
-        {/* Privacy fences */}
-        <line x1="80" y1="30" x2="80" y2="610" stroke={muted} strokeWidth="2" opacity=".3" />
-        <text x="90" y="200" fill={muted} fontSize="10" transform="rotate(-90 90 200)">PVC privacy fence (west)</text>
-        <line x1="600" y1="30" x2="600" y2="610" stroke={muted} strokeWidth="2" opacity=".25" />
-        <text x="592" y="200" fill={muted} fontSize="10" transform="rotate(90 592 200)">wood privacy fence (east)</text>
-
-        {/* Rear fence */}
-        <line x1="80" y1="30" x2="600" y2="30" stroke={muted} strokeWidth="2" opacity=".25" />
-        <text x="340" y="48" textAnchor="middle" fill={muted} fontSize="10">rear fence (~35-40' from house)</text>
-
-        {/* Pool setback */}
-        <rect x="115" y="65" width="450" height="470" rx="2" fill="none" stroke="#00b4d8" strokeWidth=".5" strokeDasharray="3 3" opacity=".25" />
-
-        {/* Depth */}
-        <line x1="620" y1="340" x2="620" y2="30" stroke={muted} strokeWidth=".5" markerStart="url(#arrow1741)" markerEnd="url(#arrow1741)" />
-        <text x="640" y="185" fill={muted} fontSize="10" transform="rotate(90 640 185)">~35-40' open yard</text>
-
-        {/* Option 1 */}
-        {active === 0 && (
-          <g>
-            <rect x="200" y="100" width="200" height="120" rx="8" fill="#00b4d8" opacity=".25" stroke="#00b4d8" strokeWidth="1.5" />
-            <text x="300" y="165" textAnchor="middle" fill="#0077b6" fontSize="13" fontWeight="600">pool 28'×18'</text>
-            <rect x="200" y="225" width="240" height="35" rx="4" fill="#d4a373" opacity=".2" stroke="#d4a373" strokeWidth="1" />
-            <text x="320" y="247" textAnchor="middle" fill="#8a5a2d" fontSize="10">covered patio from existing pad</text>
+          {/* Solar panels */}
+          <g opacity=".25">
+            <rect x="220" y="355" width="40" height="20" rx="1" fill="#1a1a2e" stroke="#1a1a2e" strokeWidth="1" />
+            <rect x="265" y="355" width="40" height="20" rx="1" fill="#1a1a2e" stroke="#1a1a2e" strokeWidth="1" />
+            <rect x="310" y="355" width="40" height="20" rx="1" fill="#1a1a2e" stroke="#1a1a2e" strokeWidth="1" />
           </g>
-        )}
+          <text x="290" y="392" textAnchor="middle" fill={muted} fontSize="13">solar panels</text>
 
-        {/* Option 2 */}
-        {active === 1 && (
-          <g>
-            <rect x="150" y="80" width="320" height="140" rx="8" fill="#00b4d8" opacity=".25" stroke="#00b4d8" strokeWidth="1.5" />
-            <text x="310" y="155" textAnchor="middle" fill="#0077b6" fontSize="13" fontWeight="600">pool 46'×20'</text>
-            <rect x="150" y="225" width="380" height="35" rx="4" fill="#d4a373" opacity=".2" stroke="#d4a373" strokeWidth="1" />
-            <text x="340" y="247" textAnchor="middle" fill="#8a5a2d" fontSize="10">full-width travertine pool deck</text>
-          </g>
-        )}
+          {/* Existing patio */}
+          <rect x="260" y="260" width="120" height="80" rx="2" fill={muted} opacity=".12" stroke={muted} strokeWidth="1" />
+          <text x="320" y="308" textAnchor="middle" fill={muted} fontSize="14" fontWeight="500">existing patio</text>
 
-        {/* Option 3 */}
-        {active === 2 && (
-          <g>
-            <rect x="140" y="110" width="140" height="110" rx="8" fill="#00b4d8" opacity=".25" stroke="#00b4d8" strokeWidth="1.5" />
-            <text x="210" y="170" textAnchor="middle" fill="#0077b6" fontSize="13" fontWeight="600">plunge 20'×16'</text>
-            <rect x="310" y="80" width="200" height="180" rx="4" fill="#d4a373" opacity=".2" stroke="#d4a373" strokeWidth="1" />
-            <text x="410" y="155" textAnchor="middle" fill="#8a5a2d" fontSize="10">covered work patio</text>
-            <text x="410" y="171" textAnchor="middle" fill="#8a5a2d" fontSize="10">+ outdoor kitchen</text>
-            <text x="410" y="187" textAnchor="middle" fill="#8a5a2d" fontSize="10">28'×26'</text>
-            <rect x="120" y="45" width="390" height="55" rx="2" fill="#2d6a4f" opacity=".1" stroke="#2d6a4f" strokeWidth=".75" strokeDasharray="3 2" />
-            <text x="315" y="77" textAnchor="middle" fill="#2d6a4f" fontSize="10">fenced dog run along rear</text>
-          </g>
-        )}
-      </svg>
+          {/* Slider */}
+          <line x1="280" y1="340" x2="360" y2="340" stroke="#00b4d8" strokeWidth="4" opacity=".7" />
+          <text x="320" y="333" textAnchor="middle" fill="#00b4d8" fontSize="13" fontWeight="500">slider to yard</text>
+
+          {/* BR windows */}
+          <line x1="420" y1="320" x2="470" y2="320" stroke="#00b4d8" strokeWidth="3" opacity=".4" />
+
+          {/* Privacy fences */}
+          <line x1="80" y1="30" x2="80" y2="610" stroke={muted} strokeWidth="3" opacity=".3" />
+          <text x="88" y="200" fill={muted} fontSize="13" fontWeight="500" transform="rotate(-90 88 200)">PVC privacy fence (west)</text>
+          <line x1="600" y1="30" x2="600" y2="610" stroke={muted} strokeWidth="3" opacity=".25" />
+          <text x="592" y="200" fill={muted} fontSize="13" fontWeight="500" transform="rotate(90 592 200)">wood privacy fence (east)</text>
+
+          {/* Rear fence */}
+          <line x1="80" y1="30" x2="600" y2="30" stroke={muted} strokeWidth="3" opacity=".25" />
+          <text x="340" y="50" textAnchor="middle" fill={muted} fontSize="13">rear fence (~35-40' from house)</text>
+
+          {/* Pool setback */}
+          <rect x="115" y="65" width="450" height="470" rx="2" fill="none" stroke="#00b4d8" strokeWidth="1" strokeDasharray="4 3" opacity=".25" />
+
+          {/* Depth */}
+          <line x1="620" y1="340" x2="620" y2="30" stroke={muted} strokeWidth=".75" markerStart="url(#arrow1741)" markerEnd="url(#arrow1741)" />
+          <text x="642" y="185" fill={muted} fontSize="13" fontWeight="500" transform="rotate(90 642 185)">~35-40' open yard</text>
+
+          {/* Option 1 */}
+          {active === 0 && (
+            <g>
+              <rect x="200" y="100" width="200" height="120" rx="8" fill="#00b4d8" opacity=".25" stroke="#00b4d8" strokeWidth="2" />
+              <text x="300" y="168" textAnchor="middle" fill="#0077b6" fontSize="18" fontWeight="700">pool 28'×18'</text>
+              <rect x="200" y="225" width="240" height="35" rx="4" fill="#d4a373" opacity=".25" stroke="#d4a373" strokeWidth="1.5" />
+              <text x="320" y="249" textAnchor="middle" fill="#8a5a2d" fontSize="14" fontWeight="500">covered patio from existing pad</text>
+            </g>
+          )}
+
+          {/* Option 2 */}
+          {active === 1 && (
+            <g>
+              <rect x="150" y="80" width="320" height="140" rx="8" fill="#00b4d8" opacity=".25" stroke="#00b4d8" strokeWidth="2" />
+              <text x="310" y="158" textAnchor="middle" fill="#0077b6" fontSize="18" fontWeight="700">pool 46'×20'</text>
+              <rect x="150" y="225" width="380" height="35" rx="4" fill="#d4a373" opacity=".25" stroke="#d4a373" strokeWidth="1.5" />
+              <text x="340" y="249" textAnchor="middle" fill="#8a5a2d" fontSize="14" fontWeight="500">full-width travertine pool deck</text>
+            </g>
+          )}
+
+          {/* Option 3 */}
+          {active === 2 && (
+            <g>
+              <rect x="140" y="110" width="140" height="110" rx="8" fill="#00b4d8" opacity=".25" stroke="#00b4d8" strokeWidth="2" />
+              <text x="210" y="173" textAnchor="middle" fill="#0077b6" fontSize="18" fontWeight="700">plunge 20'×16'</text>
+              <rect x="310" y="80" width="200" height="180" rx="4" fill="#d4a373" opacity=".25" stroke="#d4a373" strokeWidth="1.5" />
+              <text x="410" y="158" textAnchor="middle" fill="#8a5a2d" fontSize="14" fontWeight="500">covered work patio</text>
+              <text x="410" y="178" textAnchor="middle" fill="#8a5a2d" fontSize="14" fontWeight="500">+ outdoor kitchen</text>
+              <text x="410" y="198" textAnchor="middle" fill="#8a5a2d" fontSize="14" fontWeight="500">28'×26'</text>
+              {/* Dog yard */}
+              <rect x="120" y="45" width="390" height="55" rx="2" fill="#2d6a4f" opacity=".15" stroke="#2d6a4f" strokeWidth="1" strokeDasharray="3 2" />
+              <text x="315" y="78" textAnchor="middle" fill="#2d6a4f" fontSize="14" fontWeight="500">fenced dog run along rear</text>
+            </g>
+          )}
+        </svg>
+      </div>
 
       <div className={`mt-3 text-sm leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
         <span className={`font-semibold ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>{options[active].short}:</span>{' '}
