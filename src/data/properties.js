@@ -95,6 +95,13 @@ export const properties = [
       { name: 'Plunge + outdoor kitchen + dog run', poolSize: '20\'x14\'', cost: '~$70K', note: 'Best balance of everything' },
     ],
 
+    poolConcepts: [
+      { src: '/photos/3497-ne-20th-ave/pool-concepts/option1-classic-pool.png', caption: 'Concept: Classic pool behind FL room sliders with patio dining', option: 1 },
+      { src: '/photos/3497-ne-20th-ave/pool-concepts/option3-plunge-outdoor-kitchen.png', caption: 'Concept: Plunge pool + outdoor kitchen with pergola and string lights', option: 3 },
+      { src: '/photos/3497-ne-20th-ave/pool-concepts/aerial-pool-concept-1.png', caption: 'Aerial concept: Pool placement behind house — lot boundary shown', option: 0 },
+      { src: '/photos/3497-ne-20th-ave/pool-concepts/aerial-pool-concept-2.png', caption: 'Aerial concept: Pool + deck behind house — neighbors have pools', option: 0 },
+    ],
+
     photos: [
       { src: '/photos/3497-ne-20th-ave/09-front-exterior.jpg', caption: 'Front exterior — Spanish tile roof, 1-car garage, circular driveway' },
       { src: '/photos/3497-ne-20th-ave/08-aerial.jpg', caption: 'Aerial view — lot boundary, backyard open space, neighbors have pools' },
@@ -220,6 +227,11 @@ export const properties = [
       { name: 'Pool + covered patio', poolSize: '28\'x18\'', cost: '~$73K', note: 'Slider → patio → pool' },
       { name: 'Resort pool + full deck', poolSize: '46\'x20\'', cost: '~$102K', note: 'Max water area' },
       { name: 'Plunge + work patio + dog yard', poolSize: '20\'x16\'', cost: '~$75K', note: 'WFH outdoor office + pool + dog run' },
+    ],
+
+    poolConcepts: [
+      { src: '/photos/1741-ne-40th-st/pool-concepts/option1-pool-covered-patio.png', caption: 'Concept: Pool + travertine deck with covered patio, solar panels visible', option: 1 },
+      { src: '/photos/1741-ne-40th-st/pool-concepts/option3-plunge-work-patio.png', caption: 'Concept: Plunge pool + covered WFH patio with desk, privacy fences', option: 3 },
     ],
 
     photos: [

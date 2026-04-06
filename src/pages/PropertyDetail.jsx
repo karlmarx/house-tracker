@@ -360,6 +360,16 @@ export default function PropertyDetail() {
           );
         })()}
 
+        {/* Pool concept renders */}
+        {p.poolConcepts?.length > 0 && (
+          <div className="mb-6">
+            <h3 className={`text-sm font-semibold mb-3 flex items-center gap-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              <Waves size={14} className="text-teal-400" /> Pool Concept Renders
+            </h3>
+            <PhotoGallery photos={p.poolConcepts} />
+          </div>
+        )}
+
         {p.poolOptions.length > 0 && (
           <>
             <h3 className={`text-sm font-semibold mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Pool Options Summary</h3>
