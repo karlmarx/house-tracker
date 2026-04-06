@@ -333,6 +333,16 @@ export default function PropertyDetail() {
               </div>
             ))}
           </div>
+
+          {/* Renovation concept renders */}
+          {p.renoConcepts?.length > 0 && (
+            <div className="mt-6">
+              <h3 className={`text-sm font-semibold mb-3 flex items-center gap-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <Hammer size={14} className="text-teal-400" /> Renovation Concepts
+              </h3>
+              <PhotoGallery photos={p.renoConcepts} />
+            </div>
+          )}
         </Section>
       )}
 

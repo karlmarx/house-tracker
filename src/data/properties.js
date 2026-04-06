@@ -95,6 +95,12 @@ export const properties = [
       { name: 'Plunge + outdoor kitchen + dog run', poolSize: '20\'x14\'', cost: '~$70K', note: 'Best balance of everything' },
     ],
 
+    renoConcepts: [
+      { src: '/photos/3497-ne-20th-ave/reno-concepts/kitchen-navy-marble-wide.png', caption: 'Kitchen concept: Navy shaker cabinets, marble waterfall island, rattan pendants, restored terrazzo floors' },
+      { src: '/photos/3497-ne-20th-ave/reno-concepts/kitchen-navy-marble-angle.png', caption: 'Kitchen concept: Navy cabinets from dining angle — island bar seating, open to living area' },
+      { src: '/photos/3497-ne-20th-ave/reno-concepts/kitchen-walnut-checkerboard.png', caption: 'Kitchen concept: Walnut cabinets, quartz island, glass pendants — checkerboard floor visible in living area' },
+    ],
+
     poolConcepts: [
       { src: '/photos/3497-ne-20th-ave/pool-concepts/option1-classic-pool.png', caption: 'Concept: Classic pool behind FL room sliders with patio dining', option: 1 },
       { src: '/photos/3497-ne-20th-ave/pool-concepts/option3-plunge-outdoor-kitchen.png', caption: 'Concept: Plunge pool + outdoor kitchen with pergola and string lights', option: 3 },
